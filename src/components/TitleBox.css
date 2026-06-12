@@ -1,0 +1,19 @@
+.titleBox-container {
+  margin: 10px 0;
+}
+
+.titleBox {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(124, 92, 252, 0.3);
+}
+
+.titleBox span {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}

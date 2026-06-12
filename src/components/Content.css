@@ -1,0 +1,13 @@
+.content-container {
+  margin: 12px 0;
+  padding: 16px;
+  background: var(--bg2);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px var(--radius) var(--radius) 4px;
+}
+
+.content-paragraph {
+  color: var(--text2);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}

@@ -1,0 +1,44 @@
+.info-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent2);
+}
+
+.info-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.info-card__badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.info-card__title {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.info-card__body {
+  color: var(--text2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

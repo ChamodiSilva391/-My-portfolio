@@ -1,0 +1,23 @@
+.part-one {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.part-one:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+.part-one h3 {
+  color: var(--accent2);
+  margin-bottom: 8px;
+}
+
+.part-one p {
+  color: var(--text2);
+  font-size: 0.95rem;
+}
