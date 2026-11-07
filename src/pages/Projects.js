@@ -24,15 +24,16 @@ const projects = [
   {
     id: 2,
     title: 'University Student Event Management System',
-    category: 'Web App & UI/UX',
+    category: 'Full-Stack Web (PHP & MySQL)',
     badge: 'Individual Project',
-    desc: 'A modern web-based platform for organizing, discovering, and registering for university events with a clean and accessible user experience.',
+    desc: 'A web-based event coordination platform engineered with PHP and MySQL, designed for university communities to discover, manage, and register for campus activities.',
     highlights: [
-      'Designed and developed a web-based platform for managing and discovering university events.',
-      'Created user-friendly interfaces for event browsing, registration, and event information management.',
-      'Applied UI/UX principles to significantly improve usability, responsive layouts, and accessibility.'
+      'Developed a dynamic event management web application using native PHP backend and MySQL relational database.',
+      'Implemented full CRUD features for event creation, attendee registration, schedule management, and participant records.',
+      'Structured secure database schema with input validation, session handling, and relational query optimization.',
+      'Designed responsive, accessible frontend layouts using HTML5, CSS3, and JavaScript for seamless cross-device browsing.'
     ],
-    tech: ['React.js', 'JavaScript', 'CSS3', 'Responsive UI', 'UI/UX Design'],
+    tech: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3', 'Responsive Web'],
     github: 'https://github.com/ChamodiSilva391/Student_Event_Management_System.git',
     image: `${PUBLIC}/image/event-management.png`,
     color: '#38bdf8',
