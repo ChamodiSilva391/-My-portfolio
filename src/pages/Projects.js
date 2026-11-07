@@ -1,6 +1,8 @@
 import React from 'react';
 import './Projects.css';
 
+const PUBLIC = process.env.PUBLIC_URL || '';
+
 const projects = [
   {
     id: 1,
@@ -16,7 +18,7 @@ const projects = [
     ],
     tech: ['Flutter', 'Firebase', 'IoT Sensors', 'Machine Learning', 'BLE', 'Web Dashboard'],
     github: 'https://github.com/NisalAluthge/SentinelCare.git',
-    image: '/image/sentinelcare.png',
+    image: `${PUBLIC}/image/sentinelcare.png`,
     color: '#2563eb',
   },
   {
@@ -32,7 +34,7 @@ const projects = [
     ],
     tech: ['React.js', 'JavaScript', 'CSS3', 'Responsive UI', 'UI/UX Design'],
     github: 'https://github.com/ChamodiSilva391/Student_Event_Management_System.git',
-    image: '/image/event-management.png',
+    image: `${PUBLIC}/image/event-management.png`,
     color: '#38bdf8',
   },
   {
@@ -48,7 +50,7 @@ const projects = [
     ],
     tech: ['React.js', 'JavaScript', 'CSS3', 'Firebase Auth', 'Cloud Firestore'],
     github: 'https://github.com/ChamodiSilva391/careertrack-system.git',
-    image: '/image/careertrack.png',
+    image: `${PUBLIC}/image/careertrack.png`,
     color: '#60a5fa',
   },
   {
@@ -64,7 +66,7 @@ const projects = [
     ],
     tech: ['HTML5', 'CSS3', 'JavaScript', 'DOM Manipulation', 'Responsive Web'],
     github: 'https://github.com/ChamodiSilva391/calculator-app.git',
-    image: '/image/calculator.jpg',
+    image: `${PUBLIC}/image/calculator.jpg`,
     color: '#0ea5e9',
   },
 ];

@@ -61,7 +61,7 @@ export default function Navbar() {
         </ul>
 
         <a 
-          href="/resume.pdf" 
+          href={`${process.env.PUBLIC_URL || ''}/resume.pdf`} 
           download="Chamodi_Madhushani_Resume.pdf" 
           className="btn-outline navbar__cta"
           style={{ padding: '8px 18px', fontSize: '0.85rem' }}
@@ -104,7 +104,7 @@ export default function Navbar() {
           </button>
         ))}
         <a 
-          href="/resume.pdf" 
+          href={`${process.env.PUBLIC_URL || ''}/resume.pdf`} 
           download="Chamodi_Madhushani_Resume.pdf" 
           className="btn-outline" 
           style={{ marginTop: 12, width: 'fit-content', padding: '10px 20px', fontSize: '0.9rem' }}

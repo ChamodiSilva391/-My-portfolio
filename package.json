@@ -2,6 +2,7 @@
   "name": "hci-portfolio",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://chamodisilva391.github.io/-My-portfolio",
   "dependencies": {
     "bootstrap": "^5.3.8",
     "react": "^18.2.0",

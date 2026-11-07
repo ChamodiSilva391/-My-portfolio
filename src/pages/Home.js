@@ -71,7 +71,7 @@ export default function Home() {
                 </svg>
               </button>
               <a 
-                href="/resume.pdf" 
+                href={`${process.env.PUBLIC_URL || ''}/resume.pdf`} 
                 download="Chamodi_Madhushani_Resume.pdf" 
                 className="btn-outline"
                 title="Download CV / Resume"
