@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eventBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081022" />
+      <stop offset="50%" stop-color="#0e1a38" />
+      <stop offset="100%" stop-color="#162952" />
+    </linearGradient>
+    <linearGradient id="eventCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#132244" />
+      <stop offset="100%" stop-color="#0c172e" />
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338ca" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="eventGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#eventBg)" />
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="180" r="160" fill="#2563eb" opacity="0.15" filter="url(#eventGlow)" />
+  <circle cx="650" cy="320" r="150" fill="#38bdf8" opacity="0.12" filter="url(#eventGlow)" />
+
+  <!-- Main Window -->
+  <g transform="translate(50, 40)">
+    <!-- Browser Frame -->
+    <rect width="700" height="420" rx="16" fill="#0b1326" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.3" filter="url(#eventGlow)" />
+
+    <!-- Window Titlebar -->
+    <path d="M 0 16 Q 0 0 16 0 L 684 0 Q 700 0 700 16 L 700 48 L 0 48 Z" fill="#080e1c" />
+    <circle cx="24" cy="24" r="5" fill="#ef4444" opacity="0.8" />
+    <circle cx="40" cy="24" r="5" fill="#f59e0b" opacity="0.8" />
+    <circle cx="56" cy="24" r="5" fill="#10b981" opacity="0.8" />
+    
+    <!-- URL Bar -->
+    <rect x="180" y="13" width="340" height="22" rx="6" fill="#141f36" stroke="#1e293b" />
+    <circle cx="194" cy="24" r="3.5" fill="#38bdf8" />
+    <text x="206" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#94a3b8">campus-events.mrt.ac.lk/portal</text>
+
+    <!-- App Header & Navigation -->
+    <g transform="translate(24, 62)">
+      <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#f8fafc">UniEvents<tspan fill="#38bdf8">.</tspan></text>
+      
+      <!-- Search Input Mockup -->
+      <rect x="150" y="2" width="220" height="28" rx="8" fill="#14213d" stroke="#2563eb" stroke-opacity="0.3" />
+      <text x="165" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">🔍 Search events, hackathons...</text>
+
+      <!-- Category Filter Pills -->
+      <g transform="translate(400, 2)">
+        <rect width="52" height="28" rx="7" fill="#2563eb" />
+        <text x="16" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">All</text>
+
+        <rect x="58" width="65" height="28" rx="7" fill="#14213d" stroke="#1e293b" />
+        <text x="70" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500" fill="#94a3b8">Tech</text>
+
+        <rect x="129" width="85" height="28" rx="7" fill="#14213d" stroke="#1e293b" />
+        <text x="140" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500" fill="#94a3b8">Workshops</text>
+      </g>
+    </g>
+
+    <!-- Event Cards Grid (3 Columns) -->
+    <g transform="translate(24, 116)">
+      <!-- CARD 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="206" height="260" rx="14" fill="url(#cardGrad1)" stroke="#3b82f6" stroke-width="1.2" stroke-opacity="0.4" />
+        <!-- Image placeholder header -->
+        <rect width="206" height="100" rx="14" fill="#1e3a8a" fill-opacity="0.5" />
+        <text x="16" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28">🚀</text>
+        <!-- Badge -->
+        <rect x="120" y="12" width="74" height="20" rx="10" fill="#3b82f6" fill-opacity="0.3" stroke="#3b82f6" stroke-opacity="0.5" />
+        <text x="129" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#93c5fd">FEATURED</text>
+
+        <!-- Card Content -->
+        <text x="14" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#f8fafc">Annual Tech Symposium</text>
+        <text x="14" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94a3b8">📅 Nov 28, 2026 • 09:00 AM</text>
+        <text x="14" y="162" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94a3b8">📍 Civil Auditorium</text>
+
+        <rect x="14" y="178" width="178" height="1" fill="#1e293b" />
+
+        <!-- Registrations and CTA -->
+        <text x="14" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#38bdf8">👥 184 Students Registered</text>
+        <rect x="14" y="215" width="178" height="30" rx="8" fill="#2563eb" />
+        <text x="68" y="234" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">Register Now</text>
+      </g>
+
+      <!-- CARD 2 -->
+      <g transform="translate(222, 0)">
+        <rect width="206" height="260" rx="14" fill="url(#cardGrad2)" stroke="#14b8a6" stroke-width="1.2" stroke-opacity="0.4" />
+        <rect width="206" height="100" rx="14" fill="#0f766e" fill-opacity="0.4" />
+        <text x="16" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28">💼</text>
+        <rect x="130" y="12" width="64" height="20" rx="10" fill="#10b981" fill-opacity="0.25" stroke="#10b981" stroke-opacity="0.5" />
+        <text x="140" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#6ee7b7">CAREER</text>
+
+        <text x="14" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#f8fafc">Career Fair &amp; Expo</text>
+        <text x="14" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94a3b8">📅 Dec 04, 2026 • 10:00 AM</text>
+        <text x="14" y="162" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94a3b8">📍 Faculty Complex</text>
+
+        <rect x="14" y="178" width="178" height="1" fill="#1e293b" />
+
+        <text x="14" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#34d399">👥 310 Students Registered</text>
+        <rect x="14" y="215" width="178" height="30" rx="8" fill="#0d9488" />
+        <text x="76" y="234" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">View Details</text>
+      </g>
+
+      <!-- CARD 3 -->
+      <g transform="translate(444, 0)">
+        <rect width="206" height="260" rx="14" fill="url(#cardGrad3)" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.4" />
+        <rect width="206" height="100" rx="14" fill="#4338ca" fill-opacity="0.4" />
+        <text x="16" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28">⚡</text>
+        <rect x="110" y="12" width="84" height="20" rx="10" fill="#818cf8" fill-opacity="0.25" stroke="#818cf8" stroke-opacity="0.5" />
+        <text x="120" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#c7d2fe">HACKATHON</text>
+
+        <text x="14" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#f8fafc">24-Hour Code Blitz</text>
+        <text x="14" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94a3b8">📅 Dec 15, 2026 • 24 Hours</text>
+        <text x="14" y="162" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94a3b8">📍 Innovation Lab 02</text>
+
+        <rect x="14" y="178" width="178" height="1" fill="#1e293b" />
+
+        <text x="14" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#a5b4fc">👥 92 Teams Registered</text>
+        <rect x="14" y="215" width="178" height="30" rx="8" fill="#4f46e5" />
+        <text x="68" y="234" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">Register Team</text>
+      </g>
+    </g>
+  </g>
+</svg>
