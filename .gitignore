@@ -1,4 +1,6 @@
-# dependencies
+# sub-projects
+nadun-portfolio/
+
 /node_modules
 /.pnp
 .pnp.js
