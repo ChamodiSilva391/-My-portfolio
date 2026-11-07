@@ -10,8 +10,18 @@ const contactInfo = [
       </svg>
     ),
     label: 'Email',
-    value: 'chamodimadhushani18@email.com',
-    href: 'mailto:chamodimadhushani18@email.com',
+    value: 'chamodimadhushani18@gmail.com',
+    href: 'mailto:chamodimadhushani18@gmail.com',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+    ),
+    label: 'Phone',
+    value: '+94 77 468 2495',
+    href: 'tel:+94774682495',
   },
   {
     icon: (
@@ -21,7 +31,7 @@ const contactInfo = [
       </svg>
     ),
     label: 'Location',
-    value: 'Gampaha, Sri Lanka',
+    value: 'Horampalla, Gampaha, Sri Lanka',
     href: null,
   },
   {
@@ -33,6 +43,16 @@ const contactInfo = [
     label: 'GitHub',
     value: 'github.com/ChamodiSilva391',
     href: 'https://github.com/ChamodiSilva391',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    ),
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/chamodi-madhushani',
+    href: 'https://www.linkedin.com/in/chamodi-madhushani-a080b2360',
   },
 ];
 
@@ -57,7 +77,6 @@ export default function Contact() {
   const handleChange = e => {
     const { name, value } = e.target;
     setForm(f => ({ ...f, [name]: value }));
-    // Clear error on change
     if (errors[name]) setErrors(err => ({ ...err, [name]: undefined }));
   };
 
@@ -69,7 +88,6 @@ export default function Contact() {
       return;
     }
     setLoading(true);
-    // Simulate send 
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -78,24 +96,21 @@ export default function Contact() {
   };
 
   return (
-    <div className="contact-page">
-      <section className="contact-hero" aria-labelledby="contact-heading">
-        <div className="contact-hero__blob" aria-hidden="true" />
-        <div className="container">
-          <span className="section-tag">Contact</span>
-          <h1 id="contact-heading" className="section-title">Let's work together</h1>
+    <div className="contact-section">
+      <div className="container">
+        {/* Section Header */}
+        <div className="contact-header">
+          <span className="section-tag">Get in Touch</span>
+          <h2 className="section-title">Let's Connect &amp; Work Together</h2>
           <p className="section-subtitle">
-            Open to internship opportunities and collaborations. I'd love to hear from you!
+            Open to software engineering and mobile development internship opportunities and collaborations.
           </p>
         </div>
-      </section>
 
-      <section className="contact-main" aria-label="Contact information and form">
-        <div className="container contact-main__grid">
-
+        <div className="contact-main__grid">
           {/* Info column */}
           <div className="contact-info">
-            <h2 className="contact-info__heading">Get in touch</h2>
+            <h3 className="contact-info__heading">Direct Contact</h3>
             <p className="contact-info__text">
               Whether you have an internship opportunity, a project idea, or just want to say hello —
               my inbox is always open.
@@ -121,7 +136,7 @@ export default function Contact() {
 
             <div className="contact-availability">
               <div className="contact-availability__dot" aria-hidden="true" />
-              <span>Available for internships starting 2026</span>
+              <span>Open to Software Engineering &amp; Mobile Dev Internships</span>
             </div>
           </div>
 
@@ -130,7 +145,7 @@ export default function Contact() {
             {submitted ? (
               <div className="contact-success" role="alert" aria-live="polite">
                 <div className="contact-success__icon" aria-hidden="true">✅</div>
-                <h3>Message sent!</h3>
+                <h3>Message sent successfully!</h3>
                 <p>Thanks for reaching out. I'll get back to you as soon as possible.</p>
                 <button className="btn-outline" onClick={() => setSubmitted(false)}>
                   Send another message
@@ -248,7 +263,7 @@ export default function Contact() {
             )}
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

@@ -1,12 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
-import profileImg from '../assets/profile.jpeg';
+import profileImg from '../assets/profile.png';
+
+const roles = [
+  'Software Engineer',
+  'Mobile Application Developer'
+];
 
 export default function Home() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = roles[roleIndex];
+    let timer;
+
+    if (!isDeleting && displayText === current) {
+      timer = setTimeout(() => setIsDeleting(true), 1800);
+    } else if (isDeleting && displayText === '') {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    } else {
+      const speed = isDeleting ? 35 : 85;
+      timer = setTimeout(() => {
+        setDisplayText(current.substring(0, displayText.length + (isDeleting ? -1 : 1)));
+      }, speed);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, roleIndex]);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="home">
-      {/* HERO*/}
+      {/* HERO */}
       <section className="hero" aria-labelledby="hero-heading">
         {/* Background decorative blobs */}
         <div className="hero__blob hero__blob--1" aria-hidden="true" />
@@ -14,92 +48,58 @@ export default function Home() {
 
         <div className="container hero__inner">
           <div className="hero__content">
-            
-
-            <h1 id="hero-heading" className="hero__title fade-up-delay-1">
-              Hi, I'm <span className="hero__name">M.A.C.M.Silva</span>
+            <h1 id="hero-heading" className="hero__title fade-up">
+              <span className="hero__greeting">Hi, I'm</span>
               <br />
-              <span className="hero__subtitle-text">Software Engineer</span>
+              <span className="hero__name">Chamodi Madhushani</span>
+              <br />
+              <span className="hero__subtitle-wrapper">
+                <span className="hero__subtitle-text">{displayText}</span>
+                <span className="hero__cursor" aria-hidden="true">|</span>
+              </span>
             </h1>
 
-            <p className="hero__desc fade-up-delay-2">
-             I'm an IT undergraduate at the Institute of Technology, University of Moratuwa, passionate about software development, web technologies, and UI/UX design. I enjoy creating functional, user-friendly digital solutions and continuously learning new technologies to solve real-world problems.
-    
-            </p>
-
-            <div className="hero__cta-group fade-up-delay-3">
-              <Link to="/projects" className="btn-primary">
+            <div className="hero__cta-group fade-up-delay-1">
+              <button 
+                type="button" 
+                onClick={() => scrollTo('projects')} 
+                className="btn-primary"
+              >
                 View My Work
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </Link>
-              <Link to="/contact" className="btn-outline">Get in Touch</Link>
+              </button>
+              <a 
+                href="/resume.pdf" 
+                download="Chamodi_Madhushani_Resume.pdf" 
+                className="btn-outline"
+                title="Download CV / Resume"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download CV
+              </a>
+              <button 
+                type="button" 
+                onClick={() => scrollTo('contact')} 
+                className="btn-outline"
+              >
+                Get in Touch
+              </button>
             </div>
-
-      
           </div>
 
-          {/*  Visual */}
+          {/* Visual */}
           <div className="hero__visual" aria-hidden="true">
             <div className="hero__avatar-ring">
               <div className="hero__avatar">
-                <img src={profileImg} alt="Profile" className="hero__profile-pic" />
+                <img src={profileImg} alt="Chamodi Madhushani" className="hero__profile-pic" />
               </div>
             </div>          
-          </div>
-            
-        </div>
-      </section>
-
-      {/* SKILLS STRIP */}
-      <section className="skills-strip" aria-labelledby="skills-heading">
-        <div className="container">
-          <h2 id="skills-heading" className="sr-only">Technologies I Use</h2>
-          <div className="skills-strip__inner">
-            {['React', 'JavaScript', 'Node.js' , 'MySQL', 'HTML', 'CSS', 'Git', 'Figma'].map(skill => (
-              <div className="skills-strip__item" key={skill}>{skill}</div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/*  HIGHLIGHT CARDS  */}
-      <section className="highlights" aria-labelledby="highlights-heading">
-        <div className="container">
-          <div className="highlights__header">
-            <span className="section-tag">What I Do</span>
-            <h2 id="highlights-heading" className="section-title">Building with purpose</h2>
-            <p className="section-subtitle">
-              Combining robust backend logic with clean, user-centered frontend solutions to build high-performance software.
-            </p>
-          </div>
-
-          <div className="highlights__grid">
-            {[
-  {
-    
-    title: 'Full-Stack Development',
-    desc: 'Designing and building robust web applications using frontend frameworks like React and powerful backend solutions.',
-  },
-  {
-    
-    title: 'Backend & API Architecture',
-    desc: 'Developing scalable, secure server-side logic and RESTful APIs with Java, Spring Boot, and managing transactional relational databases.',
-  },
- {
-    
-    title: 'Project Management',
-    desc: 'Managing software development workflows efficiently using Agile methodologies, tracking tasks via Jira, and collaborating seamlessly through Git & GitHub workflows.',
-   
- }
-].map(card => (
-  <article className="highlight-card" key={card.title}>
-    <div className="highlight-card__icon" aria-hidden="true">{card.icon}</div>
-    <h3>{card.title}</h3>
-    <p>{card.desc}</p>
-  </article>
-))}
           </div>
         </div>
       </section>

@@ -1,0 +1,59 @@
+/* CERTIFICATES SECTION */
+.certificates-section {
+  padding: 90px 0 100px;
+  background: var(--bg);
+  position: relative;
+}
+
+.certificates-header {
+  margin-bottom: 40px;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+
+.education-item {
+  position: relative;
+  padding: 0 0 28px 36px;
+}
+.education-item:last-child { 
+  padding-bottom: 0; 
+}
+
+.education-item__dot {
+  position: absolute;
+  left: -9px;
+  top: 6px;
+  width: 16px; 
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.education-item__period {
+  font-size: 0.8rem;
+  color: var(--accent2);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.education-item h3 {
+  font-size: 1.12rem;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.education-item__institution {
+  font-size: 0.9rem;
+  color: var(--text2);
+  margin-bottom: 0;
+}

@@ -9,7 +9,7 @@
 }
 
 .navbar--scrolled {
-  background: rgba(6, 6, 10, 0.85);
+  background: rgba(9, 14, 26, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 14px 0;
@@ -19,7 +19,8 @@
 .navbar__inner {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 /* Logo */
@@ -53,7 +54,7 @@
 .navbar__link:hover { color: var(--text); background: rgba(255,255,255,0.05); }
 .navbar__link--active {
   color: var(--accent2) !important;
-  background: rgba(192,132,252,0.08);
+  background: var(--accent2-soft);
 }
 
 .navbar__cta { padding: 10px 22px; font-size: 0.88rem; }
@@ -86,7 +87,7 @@
   display: none;
   flex-direction: column;
   padding: 16px 24px 24px;
-  background: rgba(6,6,10,0.97);
+  background: rgba(9, 14, 26, 0.98);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   gap: 4px;
@@ -103,7 +104,7 @@
   transition: var(--transition);
 }
 .navbar__mobile-link:hover,
-.navbar__mobile-link.active { color: var(--accent2); background: rgba(192,132,252,0.08); }
+.navbar__mobile-link.active { color: var(--accent2); background: var(--accent2-soft); }
 
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }

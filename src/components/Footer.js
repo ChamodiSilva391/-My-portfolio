@@ -1,20 +1,49 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Footer.css';
+
+const navLinks = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'certificates', label: 'Certificates' },
+  { id: 'contact', label: 'Contact' },
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="footer" role="contentinfo">
       <div className="container footer__inner">
         
-        <div className="footer__spacer"></div>
+        <div className="footer__brand">
+          <button onClick={() => scrollTo('home')} className="footer__logo" style={{ color: 'var(--text)' }}>
+            Chamodi<span style={{ color: 'var(--accent)' }}>.</span>
+          </button>
+          <p>
+            IT Undergraduate &amp; Software Engineer specializing in mobile and web development.
+          </p>
+        </div>
 
         <nav className="footer__nav" aria-label="Footer navigation">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          {navLinks.map(link => (
+            <button
+              key={link.id}
+              type="button"
+              onClick={() => scrollTo(link.id)}
+              style={{ textAlign: 'left', color: 'var(--text2)', fontSize: '0.9rem', padding: '2px 0' }}
+            >
+              {link.label}
+            </button>
+          ))}
         </nav>
 
         <div className="footer__social" aria-label="Social links">
@@ -33,7 +62,7 @@ export default function Footer() {
       </div>
       
       <div className="footer__bottom">
-        <p>© {year} Chamodi Silva. All rights reserved.</p>
+        <p>© {year} Chamodi Madhushani. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="calcBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060b16" />
+      <stop offset="50%" stop-color="#0b1428" />
+      <stop offset="100%" stop-color="#121f3d" />
+    </linearGradient>
+    <linearGradient id="calcBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141f36" />
+      <stop offset="100%" stop-color="#0c1322" />
+    </linearGradient>
+    <linearGradient id="btnNum" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c2b4a" />
+      <stop offset="100%" stop-color="#131e33" />
+    </linearGradient>
+    <linearGradient id="btnOp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="btnFunc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="calcGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#calcBg)" />
+
+  <circle cx="280" cy="250" r="180" fill="#2563eb" opacity="0.14" filter="url(#calcGlow)" />
+  <circle cx="560" cy="200" r="140" fill="#38bdf8" opacity="0.12" filter="url(#calcGlow)" />
+
+  <!-- Code snippet sidebar mockup (Right side) -->
+  <g transform="translate(480, 70)">
+    <rect width="270" height="350" rx="14" fill="#090f1d" stroke="#3b82f6" stroke-width="1.2" stroke-opacity="0.3" filter="url(#calcGlow)" />
+    <!-- Titlebar -->
+    <path d="M 0 14 Q 0 0 14 0 L 256 0 Q 270 0 270 14 L 270 36 L 0 36 Z" fill="#060912" />
+    <circle cx="18" cy="18" r="4.5" fill="#ef4444" opacity="0.8" />
+    <circle cx="32" cy="18" r="4.5" fill="#f59e0b" opacity="0.8" />
+    <circle cx="46" cy="18" r="4.5" fill="#10b981" opacity="0.8" />
+    <text x="65" y="22" font-family="'SF Mono', Menlo, monospace" font-size="10.5" fill="#94a3b8">calculator.js</text>
+
+    <!-- Code lines -->
+    <g transform="translate(16, 52)" font-family="'SF Mono', Menlo, Consolas, monospace" font-size="10.5" line-height="1.6">
+      <text y="16" fill="#60a5fa"><tspan fill="#ec4899">const</tspan> compute = (op, a, b) =&gt; {</text>
+      <text y="38" fill="#94a3b8">  <tspan fill="#f59e0b">switch</tspan> (op) {</text>
+      <text y="60" fill="#94a3b8">    <tspan fill="#f59e0b">case</tspan> <tspan fill="#34d399">'+'</tspan>: <tspan fill="#c084fc">return</tspan> a + b;</text>
+      <text y="82" fill="#94a3b8">    <tspan fill="#f59e0b">case</tspan> <tspan fill="#34d399">'-'</tspan>: <tspan fill="#c084fc">return</tspan> a - b;</text>
+      <text y="104" fill="#94a3b8">    <tspan fill="#f59e0b">case</tspan> <tspan fill="#34d399">'×'</tspan>: <tspan fill="#c084fc">return</tspan> a * b;</text>
+      <text y="126" fill="#94a3b8">    <tspan fill="#f59e0b">case</tspan> <tspan fill="#34d399">'÷'</tspan>: <tspan fill="#c084fc">return</tspan> b !== <tspan fill="#38bdf8">0</tspan></text>
+      <text y="148" fill="#94a3b8">      ? a / b : <tspan fill="#ef4444">'Error'</tspan>;</text>
+      <text y="170" fill="#94a3b8">  }</text>
+      <text y="192" fill="#60a5fa">};</text>
+    </g>
+
+    <!-- Feature badges -->
+    <g transform="translate(16, 265)">
+      <rect width="112" height="24" rx="6" fill="#2563eb" fill-opacity="0.2" stroke="#2563eb" stroke-opacity="0.4" />
+      <text x="12" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="600" fill="#93c5fd">Event Listeners</text>
+
+      <rect x="122" width="112" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" />
+      <text x="134" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="600" fill="#38bdf8">DOM Handling</text>
+
+      <rect y="32" width="234" height="24" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.3" />
+      <text x="36" y="48" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="600" fill="#6ee7b7">✓ 100% Responsive Grid</text>
+    </g>
+  </g>
+
+  <!-- CALCULATOR DEVICE (Left/Center) -->
+  <g transform="translate(140, 45)">
+    <!-- Body Frame -->
+    <rect width="300" height="400" rx="24" fill="url(#calcBody)" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.5" filter="url(#calcGlow)" />
+    
+    <!-- Display Screen -->
+    <rect x="20" y="24" width="260" height="90" rx="14" fill="#070c18" stroke="#1e293b" />
+    <text x="264" y="52" text-anchor="end" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#64748b">1,450 × 8.5</text>
+    <text x="264" y="96" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="#f8fafc">12,325</text>
+
+    <!-- Keypad Grid (4 cols x 5 rows) -->
+    <!-- Row 1: Clear, +/-, %, / -->
+    <g transform="translate(20, 130)">
+      <rect width="58" height="44" rx="10" fill="url(#btnFunc)" />
+      <text x="29" y="28" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#ffffff">C</text>
+
+      <rect x="67" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="96" y="28" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="600" fill="#93c5fd">±</text>
+
+      <rect x="134" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="163" y="28" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="600" fill="#93c5fd">%</text>
+
+      <rect x="201" width="58" height="44" rx="10" fill="url(#btnOp)" />
+      <text x="230" y="29" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#ffffff">÷</text>
+    </g>
+
+    <!-- Row 2: 7, 8, 9, x -->
+    <g transform="translate(20, 182)">
+      <rect width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="29" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">7</text>
+
+      <rect x="67" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="96" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">8</text>
+
+      <rect x="134" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="163" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">9</text>
+
+      <rect x="201" width="58" height="44" rx="10" fill="url(#btnOp)" />
+      <text x="230" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#ffffff">×</text>
+    </g>
+
+    <!-- Row 3: 4, 5, 6, - -->
+    <g transform="translate(20, 234)">
+      <rect width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="29" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">4</text>
+
+      <rect x="67" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="96" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">5</text>
+
+      <rect x="134" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="163" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">6</text>
+
+      <rect x="201" width="58" height="44" rx="10" fill="url(#btnOp)" />
+      <text x="230" y="28" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#ffffff">−</text>
+    </g>
+
+    <!-- Row 4: 1, 2, 3, + -->
+    <g transform="translate(20, 286)">
+      <rect width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="29" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">1</text>
+
+      <rect x="67" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="96" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">2</text>
+
+      <rect x="134" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="163" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">3</text>
+
+      <rect x="201" width="58" height="44" rx="10" fill="url(#btnOp)" />
+      <text x="230" y="28" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#ffffff">+</text>
+    </g>
+
+    <!-- Row 5: 0, ., = -->
+    <g transform="translate(20, 338)">
+      <rect width="125" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="62" y="28" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#f8fafc">0</text>
+
+      <rect x="134" width="58" height="44" rx="10" fill="url(#btnNum)" stroke="#1e293b" />
+      <text x="163" y="28" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#f8fafc">.</text>
+
+      <rect x="201" width="58" height="44" rx="10" fill="#38bdf8" />
+      <text x="230" y="29" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="800" fill="#090e1a">=</text>
+    </g>
+  </g>
+</svg>
